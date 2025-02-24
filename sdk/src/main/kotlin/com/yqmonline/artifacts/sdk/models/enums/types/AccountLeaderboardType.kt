@@ -1,35 +1,19 @@
-
-package com.yqmonline.artifacts.sdk.enums.types
+package com.yqmonline.artifacts.sdk.models.enums.types
 
 import com.fasterxml.jackson.annotation.JsonProperty
 
 /**
- * Values: monster,resource,workshop,bank,grand_exchange,tasks_master,npc
+ * Values: achievements_points,gold
  */
 
-enum class MapContentType(
+enum class AccountLeaderboardType(
     private val value: String,
 ) {
-    @JsonProperty("monster")
-    MONSTER("monster"),
+    @JsonProperty("achievements_points")
+    ACHIEVEMENTS_POINTS("achievements_points"),
 
-    @JsonProperty("resource")
-    RESOURCE("resource"),
-
-    @JsonProperty("workshop")
-    WORKSHOP("workshop"),
-
-    @JsonProperty("bank")
-    BANK("bank"),
-
-    @JsonProperty("grand_exchange")
-    GRAND_EXCHANGE("grand_exchange"),
-
-    @JsonProperty("tasks_master")
-    TASKS_MASTER("tasks_master"),
-
-    @JsonProperty("npc")
-    NPC("npc"),
+    @JsonProperty("gold")
+    GOLD("gold"),
     ;
 
     /**
@@ -39,18 +23,18 @@ enum class MapContentType(
      * This solves a problem when the variable name and its value are different, and ensures that
      * the client sends the correct enum values to the server always.
      */
-    override fun toString(): String = value
+    override fun toString(): kotlin.String = value
 
     companion object {
         /**
          * Converts the provided [data] to a [String] on success, null otherwise.
          */
-        fun encode(data: Any?): String? = if (data is MapContentType) "$data" else null
+        fun encode(data: kotlin.Any?): kotlin.String? = if (data is AccountLeaderboardType) "$data" else null
 
         /**
-         * Returns a valid [MapContentType] for [data], null otherwise.
+         * Returns a valid [AccountLeaderboardType] for [data], null otherwise.
          */
-        fun decode(data: Any?): MapContentType? =
+        fun decode(data: kotlin.Any?): AccountLeaderboardType? =
             data?.let {
                 val normalizedData = "$it".lowercase()
                 entries.firstOrNull { value ->

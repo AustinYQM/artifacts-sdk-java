@@ -1,10 +1,18 @@
-package com.yqmonline.artifacts.sdk.enums.types
+
+package com.yqmonline.artifacts.sdk.models.enums.types
 
 import com.fasterxml.jackson.annotation.JsonProperty
 
-enum class ActionType(
+/**
+ * Values: spawn,movement,fight,crafting,gathering,buy_ge,sell_ge,buy_npc,sell_npc,cancel_ge,delete_item,deposit,withdraw,deposit_gold,withdraw_gold,equip,unequip,new_task,task_exchange,task_cancelled,task_completed,task_trade,christmas_exchange,recycling,rest,use,buy_bank_expansion,achievement
+ */
+
+enum class LogType(
     private val value: String,
 ) {
+    @JsonProperty("spawn")
+    SPAWN("spawn"),
+
     @JsonProperty("movement")
     MOVEMENT("movement"),
 
@@ -53,8 +61,20 @@ enum class ActionType(
     @JsonProperty("unequip")
     UNEQUIP("unequip"),
 
-    @JsonProperty("task")
-    TASK("task"),
+    @JsonProperty("new_task")
+    NEW_TASK("new_task"),
+
+    @JsonProperty("task_exchange")
+    TASK_EXCHANGE("task_exchange"),
+
+    @JsonProperty("task_cancelled")
+    TASK_CANCELLED("task_cancelled"),
+
+    @JsonProperty("task_completed")
+    TASK_COMPLETED("task_completed"),
+
+    @JsonProperty("task_trade")
+    TASK_TRADE("task_trade"),
 
     @JsonProperty("christmas_exchange")
     CHRISTMAS_EXCHANGE("christmas_exchange"),
@@ -70,6 +90,9 @@ enum class ActionType(
 
     @JsonProperty("buy_bank_expansion")
     BUY_BANK_EXPANSION("buy_bank_expansion"),
+
+    @JsonProperty("achievement")
+    ACHIEVEMENT("achievement"),
     ;
 
     /**
@@ -85,12 +108,12 @@ enum class ActionType(
         /**
          * Converts the provided [data] to a [String] on success, null otherwise.
          */
-        fun encode(data: Any?): String? = if (data is ActionType) "$data" else null
+        fun encode(data: Any?): String? = if (data is LogType) "$data" else null
 
         /**
-         * Returns a valid [ActionType] for [data], null otherwise.
+         * Returns a valid [LogType] for [data], null otherwise.
          */
-        fun decode(data: Any?): ActionType? =
+        fun decode(data: Any?): LogType? =
             data?.let {
                 val normalizedData = "$it".lowercase()
                 entries.firstOrNull { value ->

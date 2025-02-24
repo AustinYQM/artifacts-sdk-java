@@ -1,17 +1,20 @@
 
-package com.yqmonline.artifacts.sdk.enums.types
+package com.yqmonline.artifacts.sdk.models.enums.types
 
 import com.fasterxml.jackson.annotation.JsonProperty
 
 /**
- * Values: merchant
+ * Values: monsters,items
  */
 
-enum class NPCType(
+enum class TaskType(
     private val value: String,
 ) {
-    @JsonProperty("merchant")
-    MERCHANT("merchant"),
+    @JsonProperty("monsters")
+    MONSTERS("monsters"),
+
+    @JsonProperty("items")
+    ITEMS("items"),
     ;
 
     /**
@@ -27,12 +30,12 @@ enum class NPCType(
         /**
          * Converts the provided [data] to a [String] on success, null otherwise.
          */
-        fun encode(data: Any?): String? = if (data is NPCType) "$data" else null
+        fun encode(data: Any?): String? = if (data is TaskType) "$data" else null
 
         /**
-         * Returns a valid [NPCType] for [data], null otherwise.
+         * Returns a valid [TaskType] for [data], null otherwise.
          */
-        fun decode(data: Any?): NPCType? =
+        fun decode(data: Any?): TaskType? =
             data?.let {
                 val normalizedData = "$it".lowercase()
                 entries.firstOrNull { value ->

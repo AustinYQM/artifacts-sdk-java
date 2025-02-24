@@ -1,30 +1,41 @@
-package com.yqmonline.artifacts.sdk.enums
+
+package com.yqmonline.artifacts.sdk.models.enums.types
+
 import com.fasterxml.jackson.annotation.JsonProperty
 
 /**
- * Values: men1,men2,men3,women1,women2,women3
+ * Values: stat,other,heal,buff,debuff,special,gathering,teleport,gold
  */
 
-enum class CharacterSkin(
+enum class EffectSubtype(
     private val value: String,
 ) {
-    @JsonProperty("men1")
-    MEN1("men1"),
+    @JsonProperty("stat")
+    STAT("stat"),
 
-    @JsonProperty("men2")
-    MEN2("men2"),
+    @JsonProperty("other")
+    OTHER("other"),
 
-    @JsonProperty("men3")
-    MEN3("men3"),
+    @JsonProperty("heal")
+    HEAL("heal"),
 
-    @JsonProperty("women1")
-    WOMEN1("women1"),
+    @JsonProperty("buff")
+    BUFF("buff"),
 
-    @JsonProperty("women2")
-    WOMEN2("women2"),
+    @JsonProperty("debuff")
+    DEBUFF("debuff"),
 
-    @JsonProperty("women3")
-    WOMEN3("women3"),
+    @JsonProperty("special")
+    SPECIAL("special"),
+
+    @JsonProperty("gathering")
+    GATHERING("gathering"),
+
+    @JsonProperty("teleport")
+    TELEPORT("teleport"),
+
+    @JsonProperty("gold")
+    GOLD("gold"),
     ;
 
     /**
@@ -40,12 +51,12 @@ enum class CharacterSkin(
         /**
          * Converts the provided [data] to a [String] on success, null otherwise.
          */
-        fun encode(data: Any?): String? = if (data is CharacterSkin) "$data" else null
+        fun encode(data: Any?): String? = if (data is EffectSubtype) "$data" else null
 
         /**
-         * Returns a valid [CharacterSkin] for [data], null otherwise.
+         * Returns a valid [EffectSubtype] for [data], null otherwise.
          */
-        fun decode(data: Any?): CharacterSkin? =
+        fun decode(data: Any?): EffectSubtype? =
             data?.let {
                 val normalizedData = "$it".lowercase()
                 entries.firstOrNull { value ->

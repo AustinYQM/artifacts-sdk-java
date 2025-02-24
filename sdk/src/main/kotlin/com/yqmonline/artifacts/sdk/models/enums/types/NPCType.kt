@@ -1,41 +1,17 @@
 
-package com.yqmonline.artifacts.sdk.enums.types
+package com.yqmonline.artifacts.sdk.models.enums.types
 
 import com.fasterxml.jackson.annotation.JsonProperty
 
 /**
- * Values: stat,other,heal,buff,debuff,special,gathering,teleport,gold
+ * Values: merchant
  */
 
-enum class EffectSubtype(
+enum class NPCType(
     private val value: String,
 ) {
-    @JsonProperty("stat")
-    STAT("stat"),
-
-    @JsonProperty("other")
-    OTHER("other"),
-
-    @JsonProperty("heal")
-    HEAL("heal"),
-
-    @JsonProperty("buff")
-    BUFF("buff"),
-
-    @JsonProperty("debuff")
-    DEBUFF("debuff"),
-
-    @JsonProperty("special")
-    SPECIAL("special"),
-
-    @JsonProperty("gathering")
-    GATHERING("gathering"),
-
-    @JsonProperty("teleport")
-    TELEPORT("teleport"),
-
-    @JsonProperty("gold")
-    GOLD("gold"),
+    @JsonProperty("merchant")
+    MERCHANT("merchant"),
     ;
 
     /**
@@ -51,12 +27,12 @@ enum class EffectSubtype(
         /**
          * Converts the provided [data] to a [String] on success, null otherwise.
          */
-        fun encode(data: Any?): String? = if (data is EffectSubtype) "$data" else null
+        fun encode(data: Any?): String? = if (data is NPCType) "$data" else null
 
         /**
-         * Returns a valid [EffectSubtype] for [data], null otherwise.
+         * Returns a valid [NPCType] for [data], null otherwise.
          */
-        fun decode(data: Any?): EffectSubtype? =
+        fun decode(data: Any?): NPCType? =
             data?.let {
                 val normalizedData = "$it".lowercase()
                 entries.firstOrNull { value ->

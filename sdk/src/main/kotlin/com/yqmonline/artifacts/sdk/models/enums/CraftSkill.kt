@@ -1,26 +1,33 @@
-
-package com.yqmonline.artifacts.sdk.enums.types
-
+package com.yqmonline.artifacts.sdk.models.enums
 import com.fasterxml.jackson.annotation.JsonProperty
 
 /**
- * Values: equipment,consumable,combat,item
+ * Values: weaponcrafting,gearcrafting,jewelrycrafting,cooking,woodcutting,mining,alchemy
  */
 
-enum class EffectType(
-    private val value: String,
+enum class CraftSkill(
+    val value: String,
 ) {
-    @JsonProperty("equipment")
-    EQUIPMENT("equipment"),
+    @JsonProperty("weaponcrafting")
+    WEAPONCRAFTING("weaponcrafting"),
 
-    @JsonProperty("consumable")
-    CONSUMABLE("consumable"),
+    @JsonProperty("gearcrafting")
+    GEARCRAFTING("gearcrafting"),
 
-    @JsonProperty("combat")
-    COMBAT("combat"),
+    @JsonProperty("jewelrycrafting")
+    JEWELRYCRAFTING("jewelrycrafting"),
 
-    @JsonProperty("item")
-    ITEM("item"),
+    @JsonProperty("cooking")
+    COOKING("cooking"),
+
+    @JsonProperty("woodcutting")
+    WOODCUTTING("woodcutting"),
+
+    @JsonProperty("mining")
+    MINING("mining"),
+
+    @JsonProperty("alchemy")
+    ALCHEMY("alchemy"),
     ;
 
     /**
@@ -36,12 +43,12 @@ enum class EffectType(
         /**
          * Converts the provided [data] to a [String] on success, null otherwise.
          */
-        fun encode(data: Any?): String? = if (data is EffectType) "$data" else null
+        fun encode(data: Any?): String? = if (data is CraftSkill) "$data" else null
 
         /**
-         * Returns a valid [EffectType] for [data], null otherwise.
+         * Returns a valid [CraftSkill] for [data], null otherwise.
          */
-        fun decode(data: Any?): EffectType? =
+        fun decode(data: Any?): CraftSkill? =
             data?.let {
                 val normalizedData = "$it".lowercase()
                 entries.firstOrNull { value ->

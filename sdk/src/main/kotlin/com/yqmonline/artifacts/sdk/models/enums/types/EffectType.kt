@@ -1,26 +1,26 @@
 
-package com.yqmonline.artifacts.sdk.enums
+package com.yqmonline.artifacts.sdk.models.enums.types
 
 import com.fasterxml.jackson.annotation.JsonProperty
 
 /**
- * Values: mining,woodcutting,fishing,alchemy
+ * Values: equipment,consumable,combat,item
  */
 
-enum class GatheringSkill(
+enum class EffectType(
     private val value: String,
 ) {
-    @JsonProperty("mining")
-    MINING("mining"),
+    @JsonProperty("equipment")
+    EQUIPMENT("equipment"),
 
-    @JsonProperty("woodcutting")
-    WOODCUTTING("woodcutting"),
+    @JsonProperty("consumable")
+    CONSUMABLE("consumable"),
 
-    @JsonProperty("fishing")
-    FISHING("fishing"),
+    @JsonProperty("combat")
+    COMBAT("combat"),
 
-    @JsonProperty("alchemy")
-    ALCHEMY("alchemy"),
+    @JsonProperty("item")
+    ITEM("item"),
     ;
 
     /**
@@ -36,12 +36,12 @@ enum class GatheringSkill(
         /**
          * Converts the provided [data] to a [String] on success, null otherwise.
          */
-        fun encode(data: Any?): String? = if (data is GatheringSkill) "$data" else null
+        fun encode(data: Any?): String? = if (data is EffectType) "$data" else null
 
         /**
-         * Returns a valid [GatheringSkill] for [data], null otherwise.
+         * Returns a valid [EffectType] for [data], null otherwise.
          */
-        fun decode(data: Any?): GatheringSkill? =
+        fun decode(data: Any?): EffectType? =
             data?.let {
                 val normalizedData = "$it".lowercase()
                 entries.firstOrNull { value ->

@@ -1,7 +1,7 @@
 package com.yqmonline.artifacts.sdk.models.account.management
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.yqmonline.artifacts.sdk.enums.CharacterSkin
+import com.yqmonline.artifacts.sdk.models.enums.CharacterSkin
 
 /**
  * @param name Your desired character name. It's unique and all players can see it.
@@ -13,5 +13,5 @@ data class AddCharacterSchema(
     val name: String,
     // Your desired skin.
     @JsonProperty("skin")
-    val skin: CharacterSkin,
+    val skin: com.yqmonline.artifacts.sdk.models.enums.CharacterSkin,
 )

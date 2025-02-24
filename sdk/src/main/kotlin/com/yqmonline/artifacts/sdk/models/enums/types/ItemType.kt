@@ -1,5 +1,5 @@
 
-package com.yqmonline.artifacts.sdk.enums.types
+package com.yqmonline.artifacts.sdk.models.enums.types
 
 import com.fasterxml.jackson.annotation.JsonProperty
 

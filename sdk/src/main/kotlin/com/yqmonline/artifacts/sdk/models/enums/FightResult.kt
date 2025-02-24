@@ -1,38 +1,20 @@
 
-package com.yqmonline.artifacts.sdk.enums
+package com.yqmonline.artifacts.sdk.models.enums
 
 import com.fasterxml.jackson.annotation.JsonProperty
 
 /**
- * Values: weaponcrafting,gearcrafting,jewelrycrafting,cooking,woodcutting,mining,alchemy,fishing
+ * Values: win,loss
  */
 
-enum class Skill(
+enum class FightResult(
     private val value: String,
 ) {
-    @JsonProperty("weaponcrafting")
-    WEAPONCRAFTING("weaponcrafting"),
+    @JsonProperty("win")
+    WIN("win"),
 
-    @JsonProperty("gearcrafting")
-    GEARCRAFTING("gearcrafting"),
-
-    @JsonProperty("jewelrycrafting")
-    JEWELRYCRAFTING("jewelrycrafting"),
-
-    @JsonProperty("cooking")
-    COOKING("cooking"),
-
-    @JsonProperty("woodcutting")
-    WOODCUTTING("woodcutting"),
-
-    @JsonProperty("mining")
-    MINING("mining"),
-
-    @JsonProperty("alchemy")
-    ALCHEMY("alchemy"),
-
-    @JsonProperty("fishing")
-    FISHING("fishing"),
+    @JsonProperty("loss")
+    LOSS("loss"),
     ;
 
     /**
@@ -48,12 +30,12 @@ enum class Skill(
         /**
          * Converts the provided [data] to a [String] on success, null otherwise.
          */
-        fun encode(data: Any?): String? = if (data is Skill) "$data" else null
+        fun encode(data: Any?): String? = if (data is FightResult) "$data" else null
 
         /**
-         * Returns a valid [Skill] for [data], null otherwise.
+         * Returns a valid [FightResult] for [data], null otherwise.
          */
-        fun decode(data: Any?): Skill? =
+        fun decode(data: Any?): FightResult? =
             data?.let {
                 val normalizedData = "$it".lowercase()
                 entries.firstOrNull { value ->

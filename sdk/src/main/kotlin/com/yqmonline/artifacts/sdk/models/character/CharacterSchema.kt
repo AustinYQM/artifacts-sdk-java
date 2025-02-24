@@ -1,6 +1,6 @@
 package com.yqmonline.artifacts.sdk.models.character
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.yqmonline.artifacts.sdk.enums.CharacterSkin
+import com.yqmonline.artifacts.sdk.models.enums.CharacterSkin
 import com.yqmonline.artifacts.sdk.models.items.inventory.InventorySlot
 import java.time.OffsetDateTime
 
@@ -95,7 +95,7 @@ data class CharacterSchema(
     val account: String,
     // Character skin code.
     @JsonProperty("skin")
-    val skin: CharacterSkin,
+    val skin: com.yqmonline.artifacts.sdk.models.enums.CharacterSkin,
     // Combat level.
     @JsonProperty("level")
     val level: Int,

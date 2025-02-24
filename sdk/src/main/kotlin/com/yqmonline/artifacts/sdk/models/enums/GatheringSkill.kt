@@ -1,36 +1,23 @@
-package com.yqmonline.artifacts.sdk.enums.types
+
+package com.yqmonline.artifacts.sdk.models.enums
+
 import com.fasterxml.jackson.annotation.JsonProperty
 
 /**
- * Values: combat,woodcutting,mining,fishing,weaponcrafting,gearcrafting,jewelrycrafting,cooking,alchemy
+ * Values: mining,woodcutting,fishing,alchemy
  */
 
-enum class CharacterLeaderboardType(
+enum class GatheringSkill(
     private val value: String,
 ) {
-    @JsonProperty("combat")
-    COMBAT("combat"),
+    @JsonProperty("mining")
+    MINING("mining"),
 
     @JsonProperty("woodcutting")
     WOODCUTTING("woodcutting"),
 
-    @JsonProperty("mining")
-    MINING("mining"),
-
     @JsonProperty("fishing")
     FISHING("fishing"),
-
-    @JsonProperty("weaponcrafting")
-    WEAPONCRAFTING("weaponcrafting"),
-
-    @JsonProperty("gearcrafting")
-    GEARCRAFTING("gearcrafting"),
-
-    @JsonProperty("jewelrycrafting")
-    JEWELRYCRAFTING("jewelrycrafting"),
-
-    @JsonProperty("cooking")
-    COOKING("cooking"),
 
     @JsonProperty("alchemy")
     ALCHEMY("alchemy"),
@@ -49,12 +36,12 @@ enum class CharacterLeaderboardType(
         /**
          * Converts the provided [data] to a [String] on success, null otherwise.
          */
-        fun encode(data: Any?): String? = if (data is CharacterLeaderboardType) "$data" else null
+        fun encode(data: Any?): String? = if (data is GatheringSkill) "$data" else null
 
         /**
-         * Returns a valid [CharacterLeaderboardType] for [data], null otherwise.
+         * Returns a valid [GatheringSkill] for [data], null otherwise.
          */
-        fun decode(data: Any?): CharacterLeaderboardType? =
+        fun decode(data: Any?): GatheringSkill? =
             data?.let {
                 val normalizedData = "$it".lowercase()
                 entries.firstOrNull { value ->
