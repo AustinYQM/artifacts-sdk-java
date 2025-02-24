@@ -1,10 +1,11 @@
 package com.yqmonline.artifacts.sdk.models.enums
 import com.fasterxml.jackson.annotation.JsonProperty
+import kotlinx.serialization.Serializable
 
 /**
  * Values: weaponcrafting,gearcrafting,jewelrycrafting,cooking,woodcutting,mining,alchemy
  */
-
+@Serializable
 enum class CraftSkill(
     val value: String,
 ) {

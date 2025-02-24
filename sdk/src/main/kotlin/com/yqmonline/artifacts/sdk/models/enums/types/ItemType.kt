@@ -2,11 +2,12 @@
 package com.yqmonline.artifacts.sdk.models.enums.types
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import kotlinx.serialization.Serializable
 
 /**
  * Values: utility,body_armor,weapon,resource,leg_armor,helmet,boots,shield,amulet,ring,artifact,currency,consumable,rune,bag
  */
-
+@Serializable
 enum class ItemType(
     private val value: String,
 ) {

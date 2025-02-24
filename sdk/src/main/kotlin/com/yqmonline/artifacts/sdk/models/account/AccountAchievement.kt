@@ -1,9 +1,10 @@
 package com.yqmonline.artifacts.sdk.models.account
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.yqmonline.artifacts.sdk.enums.types.AchievementType
 import com.yqmonline.artifacts.sdk.models.account.achievement.AchievementRewards
-import java.time.OffsetDateTime
+import com.yqmonline.artifacts.sdk.models.enums.types.AchievementType
+import kotlinx.datetime.Instant
+import kotlinx.serialization.Serializable
 
 /**
  * @param name Name of the achievement.
@@ -18,6 +19,7 @@ import java.time.OffsetDateTime
  * @param completedAt
  */
 
+@Serializable
 data class AccountAchievement(
     // Name of the achievement.
     @JsonProperty("name")
@@ -46,5 +48,5 @@ data class AccountAchievement(
     @JsonProperty("current")
     val current: Int,
     @JsonProperty("completed_at")
-    val completedAt: OffsetDateTime?,
+    val completedAt: Instant?,
 )

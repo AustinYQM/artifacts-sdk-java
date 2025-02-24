@@ -1,7 +1,9 @@
 package com.yqmonline.artifacts.sdk.models.character
+
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.yqmonline.artifacts.sdk.models.CooldownSchema
 import com.yqmonline.artifacts.sdk.models.map.MapSchema
+import kotlinx.serialization.Serializable
 
 /**
  * @param cooldown Cooldown details
@@ -9,6 +11,7 @@ import com.yqmonline.artifacts.sdk.models.map.MapSchema
  * @param character Character details.
  */
 
+@Serializable
 data class CharacterMovementDataSchema(
     // Cooldown details
     @JsonProperty("cooldown")

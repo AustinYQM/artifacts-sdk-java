@@ -2,8 +2,10 @@
 package com.yqmonline.artifacts.sdk.models
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.yqmonline.artifacts.sdk.enums.types.LogType
-import java.time.OffsetDateTime
+import com.yqmonline.artifacts.sdk.models.enums.types.LogType
+import kotlinx.datetime.Instant
+import kotlinx.serialization.Contextual
+import kotlinx.serialization.Serializable
 
 /**
  * @param character Character name.
@@ -16,6 +18,7 @@ import java.time.OffsetDateTime
  * @param createdAt Datetime of creation.
  */
 
+@Serializable
 data class LogSchema(
     // Character name.
     @JsonProperty("character")
@@ -30,13 +33,14 @@ data class LogSchema(
     @JsonProperty("description")
     val description: String,
     @JsonProperty("content")
+    @Contextual
     val content: Any?,
     // Cooldown in seconds.
     @JsonProperty("cooldown")
     val cooldown: Int,
     @JsonProperty("cooldown_expiration")
-    val cooldownExpiration: OffsetDateTime?,
+    val cooldownExpiration: Instant?,
     // Datetime of creation.
     @JsonProperty("created_at")
-    val createdAt: OffsetDateTime,
+    val createdAt: Instant,
 )

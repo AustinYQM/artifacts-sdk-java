@@ -3,6 +3,7 @@
 package com.yqmonline.artifacts.sdk.models.items
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import kotlinx.serialization.Serializable
 
 /**
  * @param code Item code.
@@ -11,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty
  * @param maxQuantity Maximum quantity.
  */
 
+@Serializable
 data class DropRateSchema(
     // Item code.
     @JsonProperty("code")

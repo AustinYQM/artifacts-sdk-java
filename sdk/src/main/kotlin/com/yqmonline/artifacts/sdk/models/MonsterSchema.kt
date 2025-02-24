@@ -1,8 +1,8 @@
-
 package com.yqmonline.artifacts.sdk.models
 
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.yqmonline.artifacts.sdk.models.items.DropRateSchema
+import kotlinx.serialization.Serializable
 
 /**
  * @param name Name of the monster.
@@ -24,6 +24,7 @@ import com.yqmonline.artifacts.sdk.models.items.DropRateSchema
  * @param effects List of effects.
  */
 
+@Serializable
 data class MonsterSchema(
     // Name of the monster.
     @JsonProperty("name")

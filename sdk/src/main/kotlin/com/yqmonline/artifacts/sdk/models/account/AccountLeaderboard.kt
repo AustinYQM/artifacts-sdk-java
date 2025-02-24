@@ -1,7 +1,8 @@
 package com.yqmonline.artifacts.sdk.models.account
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.yqmonline.artifacts.sdk.enums.AccountStatus
+import com.yqmonline.artifacts.sdk.models.enums.AccountStatus
+import kotlinx.serialization.Serializable
 
 /**
  * @param position Position in the leaderboard.
@@ -11,6 +12,7 @@ import com.yqmonline.artifacts.sdk.enums.AccountStatus
  * @param gold Gold in the account.
  */
 
+@Serializable
 data class AccountLeaderboard(
     // Position in the leaderboard.
     @JsonProperty("position")

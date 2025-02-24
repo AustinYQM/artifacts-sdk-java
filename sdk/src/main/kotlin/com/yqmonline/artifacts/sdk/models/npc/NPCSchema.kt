@@ -2,7 +2,8 @@
 package com.yqmonline.artifacts.sdk.models.npc
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.yqmonline.artifacts.sdk.enums.types.NPCType
+import com.yqmonline.artifacts.sdk.models.enums.types.NPCType
+import kotlinx.serialization.Serializable
 
 /**
  * @param name Name of the NPC.
@@ -11,6 +12,7 @@ import com.yqmonline.artifacts.sdk.enums.types.NPCType
  * @param type Type of the NPC.
  */
 
+@Serializable
 data class NPCSchema(
     // Name of the NPC.
     @JsonProperty("name")

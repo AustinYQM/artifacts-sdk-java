@@ -1,6 +1,7 @@
 package com.yqmonline.artifacts.sdk.models.response.wrapper.pagable
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.yqmonline.artifacts.sdk.models.event.ActiveEventSchema
+import kotlinx.serialization.Serializable
 
 /**
  * @param `data`
@@ -10,6 +11,7 @@ import com.yqmonline.artifacts.sdk.models.event.ActiveEventSchema
  * @param pages
  */
 
+@Serializable
 data class DataPageActiveEventSchema(
     @JsonProperty("data")
     val `data`: List<ActiveEventSchema>,

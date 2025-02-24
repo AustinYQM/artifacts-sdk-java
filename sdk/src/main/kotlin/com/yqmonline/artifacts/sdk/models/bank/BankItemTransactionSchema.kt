@@ -5,6 +5,7 @@ import com.yqmonline.artifacts.sdk.models.CooldownSchema
 import com.yqmonline.artifacts.sdk.models.character.CharacterSchema
 import com.yqmonline.artifacts.sdk.models.items.ItemSchema
 import com.yqmonline.artifacts.sdk.models.items.SimpleItemSchema
+import kotlinx.serialization.Serializable
 
 /**
  * @param cooldown Cooldown details.
@@ -13,6 +14,7 @@ import com.yqmonline.artifacts.sdk.models.items.SimpleItemSchema
  * @param character Player details.
  */
 
+@Serializable
 data class BankItemTransactionSchema(
     // Cooldown details.
     @JsonProperty("cooldown")

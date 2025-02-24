@@ -2,6 +2,7 @@
 package com.yqmonline.artifacts.sdk.models.error
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import kotlinx.serialization.Serializable
 
 /**
  * @param loc
@@ -9,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty
  * @param type
  */
 
+@Serializable
 data class ValidationError(
     @JsonProperty("loc")
     val loc: List<ValidationErrorLocInner>,

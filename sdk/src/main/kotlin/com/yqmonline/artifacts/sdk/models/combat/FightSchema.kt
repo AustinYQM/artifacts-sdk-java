@@ -1,8 +1,9 @@
 package com.yqmonline.artifacts.sdk.models.combat
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.yqmonline.artifacts.sdk.enums.FightResult
+import com.yqmonline.artifacts.sdk.models.enums.FightResult
 import com.yqmonline.artifacts.sdk.models.items.inventory.DropSchema
+import kotlinx.serialization.Serializable
 
 /**
  * @param xp The amount of xp gained from the fight.
@@ -15,6 +16,7 @@ import com.yqmonline.artifacts.sdk.models.items.inventory.DropSchema
  * @param result The result of the fight.
  */
 
+@Serializable
 data class FightSchema(
     // The amount of xp gained from the fight.
     @JsonProperty("xp")

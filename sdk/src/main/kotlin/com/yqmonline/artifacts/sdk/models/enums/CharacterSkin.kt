@@ -1,10 +1,11 @@
 package com.yqmonline.artifacts.sdk.models.enums
 import com.fasterxml.jackson.annotation.JsonProperty
+import kotlinx.serialization.Serializable
 
 /**
  * Values: men1,men2,men3,women1,women2,women3
  */
-
+@Serializable
 enum class CharacterSkin(
     private val value: String,
 ) {

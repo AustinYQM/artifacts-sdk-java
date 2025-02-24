@@ -1,7 +1,9 @@
 package com.yqmonline.artifacts.sdk.models.account.management
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.yqmonline.artifacts.sdk.enums.AccountStatus
+import com.yqmonline.artifacts.sdk.models.account.badge.BadgeSchema
+import com.yqmonline.artifacts.sdk.models.enums.AccountStatus
+import kotlinx.serialization.Serializable
 
 /**
  *
@@ -15,6 +17,7 @@ import com.yqmonline.artifacts.sdk.enums.AccountStatus
  * @param banReason Ban reason.
  */
 
+@Serializable
 data class AccountDetails(
     // Username.
     @JsonProperty("username")
@@ -33,7 +36,7 @@ data class AccountDetails(
     val banned: Boolean,
     // Account badges.
     @JsonProperty("badges")
-    val badges: List<Any>? = null,
+    val badges: List<BadgeSchema>? = null,
     // Ban reason.
     @JsonProperty("ban_reason")
     val banReason: String? = null,

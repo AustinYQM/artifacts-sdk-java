@@ -3,6 +3,7 @@ package com.yqmonline.artifacts.sdk.models.response.wrapper.pagable
 
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.yqmonline.artifacts.sdk.models.task.TaskFullSchema
+import kotlinx.serialization.Serializable
 
 /**
  * @param `data`
@@ -12,6 +13,7 @@ import com.yqmonline.artifacts.sdk.models.task.TaskFullSchema
  * @param pages
  */
 
+@Serializable
 data class DataPageTaskFullSchema(
     @JsonProperty("data")
     val `data`: List<TaskFullSchema>,

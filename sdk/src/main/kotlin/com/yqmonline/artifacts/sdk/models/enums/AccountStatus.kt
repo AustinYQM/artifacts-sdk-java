@@ -1,7 +1,9 @@
 package com.yqmonline.artifacts.sdk.models.enums
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import kotlinx.serialization.Serializable
 
+@Serializable
 enum class AccountStatus(
     private val value: String,
 ) {

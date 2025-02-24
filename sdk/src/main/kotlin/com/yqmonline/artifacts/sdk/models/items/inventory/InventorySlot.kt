@@ -3,6 +3,7 @@
 package com.yqmonline.artifacts.sdk.models.items.inventory
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import kotlinx.serialization.Serializable
 
 /**
  * @param slot Inventory slot identifier.
@@ -10,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty
  * @param quantity Quantity in the slot.
  */
 
+@Serializable
 data class InventorySlot(
     // Inventory slot identifier.
     @JsonProperty("slot")

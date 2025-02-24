@@ -1,8 +1,8 @@
-
 package com.yqmonline.artifacts.sdk.models.account
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import java.time.OffsetDateTime
+import kotlinx.datetime.Instant
+import kotlinx.serialization.Serializable
 
 /**
  * @param status Server status
@@ -14,7 +14,7 @@ import java.time.OffsetDateTime
  * @param lastWipe Last server wipe.
  * @param nextWipe Next server wipe.
  */
-
+@Serializable
 data class StatusSchema(
     // Server status
     @JsonProperty("status")
@@ -30,7 +30,7 @@ data class StatusSchema(
     val charactersOnline: Int,
     // Server time.
     @JsonProperty("server_time")
-    val serverTime: OffsetDateTime,
+    val serverTime: Instant,
     // Server announcements.
     @JsonProperty("announcements")
     val announcements: List<AnnouncementSchema>,

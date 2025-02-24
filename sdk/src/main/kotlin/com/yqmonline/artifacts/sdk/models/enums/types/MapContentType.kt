@@ -2,11 +2,12 @@
 package com.yqmonline.artifacts.sdk.models.enums.types
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import kotlinx.serialization.Serializable
 
 /**
  * Values: monster,resource,workshop,bank,grand_exchange,tasks_master,npc
  */
-
+@Serializable
 enum class MapContentType(
     private val value: String,
 ) {

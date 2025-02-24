@@ -1,7 +1,8 @@
 package com.yqmonline.artifacts.sdk.models.skill.crafting
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.yqmonline.artifacts.sdk.enums.CraftSkill
+import com.yqmonline.artifacts.sdk.models.enums.CraftSkill
 import com.yqmonline.artifacts.sdk.models.items.SimpleItemSchema
+import kotlinx.serialization.Serializable
 
 /**
  * @param skill Skill required to craft the item.
@@ -10,6 +11,7 @@ import com.yqmonline.artifacts.sdk.models.items.SimpleItemSchema
  * @param quantity Quantity of items crafted.
  */
 
+@Serializable
 data class CraftSchema(
     // Skill required to craft the item.
     @JsonProperty("skill")

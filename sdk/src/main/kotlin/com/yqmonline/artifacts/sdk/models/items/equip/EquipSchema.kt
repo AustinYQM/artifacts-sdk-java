@@ -2,7 +2,8 @@
 package com.yqmonline.artifacts.sdk.models.items.equip
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.yqmonline.artifacts.sdk.enums.ItemSlot
+import com.yqmonline.artifacts.sdk.models.enums.ItemSlot
+import kotlinx.serialization.Serializable
 
 /**
  * @param code Item code.
@@ -10,6 +11,7 @@ import com.yqmonline.artifacts.sdk.enums.ItemSlot
  * @param quantity Item quantity. Applicable to utilities only.
  */
 
+@Serializable
 data class EquipSchema(
     // Item code.
     @JsonProperty("code")

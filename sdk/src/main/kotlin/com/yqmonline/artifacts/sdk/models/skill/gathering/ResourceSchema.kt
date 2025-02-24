@@ -2,8 +2,9 @@
 package com.yqmonline.artifacts.sdk.models.skill.gathering
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.yqmonline.artifacts.sdk.enums.GatheringSkill
+import com.yqmonline.artifacts.sdk.models.enums.GatheringSkill
 import com.yqmonline.artifacts.sdk.models.items.DropRateSchema
+import kotlinx.serialization.Serializable
 
 /**
  * @param name The name of the resource
@@ -13,6 +14,7 @@ import com.yqmonline.artifacts.sdk.models.items.DropRateSchema
  * @param drops The drops of this resource.
  */
 
+@Serializable
 data class ResourceSchema(
     // The name of the resource
     @JsonProperty("name")

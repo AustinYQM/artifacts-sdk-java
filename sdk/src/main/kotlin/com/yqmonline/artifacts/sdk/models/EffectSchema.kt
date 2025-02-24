@@ -2,8 +2,9 @@
 package com.yqmonline.artifacts.sdk.models
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.yqmonline.artifacts.sdk.enums.types.EffectSubtype
-import com.yqmonline.artifacts.sdk.enums.types.EffectType
+import com.yqmonline.artifacts.sdk.models.enums.types.EffectSubtype
+import com.yqmonline.artifacts.sdk.models.enums.types.EffectType
+import kotlinx.serialization.Serializable
 
 /**
  * @param name Name of the monster.
@@ -13,6 +14,7 @@ import com.yqmonline.artifacts.sdk.enums.types.EffectType
  * @param subtype Subtype of the effect.
  */
 
+@Serializable
 data class EffectSchema(
     // Name of the monster.
     @JsonProperty("name")

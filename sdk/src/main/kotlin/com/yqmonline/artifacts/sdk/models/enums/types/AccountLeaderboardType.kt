@@ -1,11 +1,12 @@
 package com.yqmonline.artifacts.sdk.models.enums.types
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import kotlinx.serialization.Serializable
 
 /**
  * Values: achievements_points,gold
  */
-
+@Serializable
 enum class AccountLeaderboardType(
     private val value: String,
 ) {

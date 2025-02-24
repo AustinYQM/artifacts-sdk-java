@@ -3,7 +3,8 @@
 package com.yqmonline.artifacts.sdk.models.items.ge
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import java.time.OffsetDateTime
+import kotlinx.datetime.Instant
+import kotlinx.serialization.Serializable
 
 /**
  * @param orderId Order id.
@@ -15,6 +16,7 @@ import java.time.OffsetDateTime
  * @param soldAt Sale datetime.
  */
 
+@Serializable
 data class GEOrderHistorySchema(
     // Order id.
     @JsonProperty("order_id")
@@ -36,5 +38,5 @@ data class GEOrderHistorySchema(
     val price: Int,
     // Sale datetime.
     @JsonProperty("sold_at")
-    val soldAt: OffsetDateTime,
+    val soldAt: Instant,
 )

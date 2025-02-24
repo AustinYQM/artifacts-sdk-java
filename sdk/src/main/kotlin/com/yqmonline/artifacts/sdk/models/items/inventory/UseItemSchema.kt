@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty
 import com.yqmonline.artifacts.sdk.models.CooldownSchema
 import com.yqmonline.artifacts.sdk.models.character.CharacterSchema
 import com.yqmonline.artifacts.sdk.models.items.ItemSchema
+import kotlinx.serialization.Serializable
 
 /**
  * @param cooldown Cooldown details.
@@ -12,6 +13,7 @@ import com.yqmonline.artifacts.sdk.models.items.ItemSchema
  * @param character Player details.
  */
 
+@Serializable
 data class UseItemSchema(
     // Cooldown details.
     @JsonProperty("cooldown")

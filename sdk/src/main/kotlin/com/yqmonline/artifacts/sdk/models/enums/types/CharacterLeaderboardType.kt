@@ -1,10 +1,11 @@
 package com.yqmonline.artifacts.sdk.models.enums.types
 import com.fasterxml.jackson.annotation.JsonProperty
+import kotlinx.serialization.Serializable
 
 /**
  * Values: combat,woodcutting,mining,fishing,weaponcrafting,gearcrafting,jewelrycrafting,cooking,alchemy
  */
-
+@Serializable
 enum class CharacterLeaderboardType(
     private val value: String,
 ) {

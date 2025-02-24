@@ -1,8 +1,8 @@
 package com.yqmonline.artifacts.sdk.models.character
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.yqmonline.artifacts.sdk.models.enums.CharacterSkin
 import com.yqmonline.artifacts.sdk.models.items.inventory.InventorySlot
-import java.time.OffsetDateTime
+import kotlinx.datetime.Instant
+import kotlinx.serialization.Serializable
 
 /**
  * @param name Name of the character.
@@ -86,6 +86,7 @@ import java.time.OffsetDateTime
  * @param inventory List of inventory slots.
  */
 
+@Serializable
 data class CharacterSchema(
     // Name of the character.
     @JsonProperty("name")
@@ -320,7 +321,7 @@ data class CharacterSchema(
     val inventoryMaxItems: Int,
     // Datetime Cooldown expiration.
     @JsonProperty("cooldown_expiration")
-    val cooldownExpiration: OffsetDateTime? = null,
+    val cooldownExpiration: Instant? = null,
     // List of inventory slots.
     @JsonProperty("inventory")
     val inventory: List<InventorySlot>? = null,

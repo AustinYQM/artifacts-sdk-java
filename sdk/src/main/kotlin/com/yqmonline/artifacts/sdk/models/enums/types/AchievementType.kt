@@ -1,7 +1,9 @@
 package com.yqmonline.artifacts.sdk.models.enums.types
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import kotlinx.serialization.Serializable
 
+@Serializable
 enum class AchievementType(
     private val value: kotlin.String,
 ) {

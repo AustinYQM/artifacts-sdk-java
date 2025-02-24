@@ -2,11 +2,12 @@
 package com.yqmonline.artifacts.sdk.models.enums.types
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import kotlinx.serialization.Serializable
 
 /**
  * Values: equipment,consumable,combat,item
  */
-
+@Serializable
 enum class EffectType(
     private val value: String,
 ) {

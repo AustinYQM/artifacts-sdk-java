@@ -2,6 +2,7 @@
 package com.yqmonline.artifacts.sdk.models.event
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import kotlinx.serialization.Serializable
 
 /**
  * @param name Name of the event.
@@ -13,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty
  * @param content Content of the event.
  */
 
+@Serializable
 data class EventSchema(
     // Name of the event.
     @JsonProperty("name")

@@ -1,6 +1,7 @@
 package com.yqmonline.artifacts.sdk.models.npc
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import kotlinx.serialization.Serializable
 
 /**
  * @param code Item code.
@@ -9,7 +10,8 @@ import com.fasterxml.jackson.annotation.JsonProperty
  * @param totalPrice Total price of the transaction.
  */
 
-data class NpcItemTransactionSchema(
+@Serializable
+data class NPCItemTransactionSchema(
     // Item code.
     @JsonProperty("code")
     val code: String,

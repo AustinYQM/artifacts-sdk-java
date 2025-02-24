@@ -3,6 +3,7 @@ package com.yqmonline.artifacts.sdk.models.npc
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.yqmonline.artifacts.sdk.models.CooldownSchema
 import com.yqmonline.artifacts.sdk.models.character.CharacterSchema
+import kotlinx.serialization.Serializable
 
 /**
  * @param cooldown Cooldown details.
@@ -10,13 +11,14 @@ import com.yqmonline.artifacts.sdk.models.character.CharacterSchema
  * @param character Character details.
  */
 
+@Serializable
 data class NPCMerchantTransactionSchema(
     // Cooldown details.
     @JsonProperty("cooldown")
     val cooldown: CooldownSchema,
     // Transaction details.
     @JsonProperty("transaction")
-    val transaction: NpcItemTransactionSchema,
+    val transaction: NPCItemTransactionSchema,
     // Character details.
     @JsonProperty("character")
     val character: CharacterSchema,

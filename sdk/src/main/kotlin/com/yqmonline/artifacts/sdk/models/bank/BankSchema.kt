@@ -1,6 +1,7 @@
 package com.yqmonline.artifacts.sdk.models.bank
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import kotlinx.serialization.Serializable
 
 /**
  * @param slots Maximum slots in your bank.
@@ -9,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty
  * @param gold Quantity of gold in your bank.
  */
 
+@Serializable
 data class BankSchema(
     // Maximum slots in your bank.
     @JsonProperty("slots")

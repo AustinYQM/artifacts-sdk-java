@@ -2,11 +2,12 @@
 package com.yqmonline.artifacts.sdk.models.enums.types
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import kotlinx.serialization.Serializable
 
 /**
  * Values: monsters,items
  */
-
+@Serializable
 enum class TaskType(
     private val value: String,
 ) {

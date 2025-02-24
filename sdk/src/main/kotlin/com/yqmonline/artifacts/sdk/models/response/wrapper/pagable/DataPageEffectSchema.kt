@@ -1,6 +1,7 @@
 package com.yqmonline.artifacts.sdk.models.response.wrapper.pagable
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.yqmonline.artifacts.sdk.models.EffectSchema
+import kotlinx.serialization.Serializable
 
 /**
  * @param `data`
@@ -10,6 +11,7 @@ import com.yqmonline.artifacts.sdk.models.EffectSchema
  * @param pages
  */
 
+@Serializable
 data class DataPageEffectSchema(
     @JsonProperty("data")
     val `data`: List<EffectSchema>,

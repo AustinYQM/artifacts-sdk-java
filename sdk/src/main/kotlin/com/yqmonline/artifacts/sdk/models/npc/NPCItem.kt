@@ -3,6 +3,7 @@
 package com.yqmonline.artifacts.sdk.models.npc
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import kotlinx.serialization.Serializable
 
 /**
  * @param code The code of the NPC. This is the NPC's unique identifier (ID).
@@ -11,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty
  * @param sellPrice
  */
 
+@Serializable
 data class NPCItem(
     // The code of the NPC. This is the NPC's unique identifier (ID).
     @JsonProperty("code")

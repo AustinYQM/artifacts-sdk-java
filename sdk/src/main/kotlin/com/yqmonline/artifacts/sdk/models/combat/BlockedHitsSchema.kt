@@ -1,6 +1,7 @@
 package com.yqmonline.artifacts.sdk.models.combat
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import kotlinx.serialization.Serializable
 
 /**
  * @param fire The amount of fire hits blocked.
@@ -10,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty
  * @param total The amount of total hits blocked.
  */
 
+@Serializable
 data class BlockedHitsSchema(
     // The amount of fire hits blocked.
     @JsonProperty("fire")

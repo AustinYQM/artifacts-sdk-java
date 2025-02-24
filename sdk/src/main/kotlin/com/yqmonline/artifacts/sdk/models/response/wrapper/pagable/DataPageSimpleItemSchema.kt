@@ -3,6 +3,7 @@ package com.yqmonline.artifacts.sdk.models.response.wrapper.pagable
 
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.yqmonline.artifacts.sdk.models.items.SimpleItemSchema
+import kotlinx.serialization.Serializable
 
 /**
  * @param `data`
@@ -12,6 +13,7 @@ import com.yqmonline.artifacts.sdk.models.items.SimpleItemSchema
  * @param pages
  */
 
+@Serializable
 data class DataPageSimpleItemSchema(
     @JsonProperty("data")
     val `data`: List<SimpleItemSchema>,

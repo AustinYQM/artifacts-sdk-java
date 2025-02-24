@@ -3,6 +3,7 @@
 package com.yqmonline.artifacts.sdk.models.items.ge
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import kotlinx.serialization.Serializable
 
 /**
  * @param code Item code.
@@ -10,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty
  * @param price Item price per unit.
  */
 
+@Serializable
 data class GEOrderCreationSchema(
     // Item code.
     @JsonProperty("code")

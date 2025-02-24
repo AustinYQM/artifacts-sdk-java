@@ -3,6 +3,7 @@ package com.yqmonline.artifacts.sdk.models.response.wrapper.pagable
 
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.yqmonline.artifacts.sdk.models.npc.NPCSchema
+import kotlinx.serialization.Serializable
 
 /**
  * @param `data`
@@ -12,6 +13,7 @@ import com.yqmonline.artifacts.sdk.models.npc.NPCSchema
  * @param pages
  */
 
+@Serializable
 data class DataPageNPCSchema(
     @JsonProperty("data")
     val `data`: List<NPCSchema>,

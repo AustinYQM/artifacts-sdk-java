@@ -2,7 +2,8 @@ package com.yqmonline.artifacts.sdk.models.event
 
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.yqmonline.artifacts.sdk.models.map.MapSchema
-import java.time.OffsetDateTime
+import kotlinx.datetime.Instant
+import kotlinx.serialization.Serializable
 
 /**
  *
@@ -16,6 +17,7 @@ import java.time.OffsetDateTime
  * @param createdAt Start datetime.
  */
 
+@Serializable
 data class ActiveEventSchema(
     // Name of the event.
     @JsonProperty("name")
@@ -34,8 +36,8 @@ data class ActiveEventSchema(
     val duration: Int,
     // Expiration datetime.
     @JsonProperty("expiration")
-    val expiration: OffsetDateTime,
+    val expiration: Instant,
     // Start datetime.
     @JsonProperty("created_at")
-    val createdAt: OffsetDateTime,
+    val createdAt: Instant,
 )

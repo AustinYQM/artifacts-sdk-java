@@ -1,6 +1,7 @@
 package com.yqmonline.artifacts.sdk.models.account.badge
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import kotlinx.serialization.Serializable
 
 /**
  * @param code Code of the badge. This is the badge's unique identifier (ID).
@@ -9,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty
  * @param season
  */
 
+@Serializable
 data class BadgeSchema(
     // Code of the badge. This is the badge's unique identifier (ID).
     @JsonProperty("code")

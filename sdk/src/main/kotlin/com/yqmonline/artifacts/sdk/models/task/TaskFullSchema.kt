@@ -2,7 +2,8 @@
 package com.yqmonline.artifacts.sdk.models.task
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.yqmonline.artifacts.sdk.enums.types.TaskType
+import com.yqmonline.artifacts.sdk.models.enums.types.TaskType
+import kotlinx.serialization.Serializable
 
 /**
  * @param code Task objective.
@@ -14,6 +15,7 @@ import com.yqmonline.artifacts.sdk.enums.types.TaskType
  * @param rewards Rewards.
  */
 
+@Serializable
 data class TaskFullSchema(
     // Task objective.
     @JsonProperty("code")

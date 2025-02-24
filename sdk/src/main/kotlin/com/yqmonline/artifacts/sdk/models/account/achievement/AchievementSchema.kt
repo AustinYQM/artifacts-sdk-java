@@ -1,7 +1,8 @@
 package com.yqmonline.artifacts.sdk.models.account.achievement
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.yqmonline.artifacts.sdk.enums.types.AchievementType
+import com.yqmonline.artifacts.sdk.models.enums.types.AchievementType
+import kotlinx.serialization.Serializable
 
 /**
  * @param name Name of the achievement.
@@ -14,6 +15,7 @@ import com.yqmonline.artifacts.sdk.enums.types.AchievementType
  * @param rewards Rewards.
  */
 
+@Serializable
 data class AchievementSchema(
     // Name of the achievement.
     @JsonProperty("name")

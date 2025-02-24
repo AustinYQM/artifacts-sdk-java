@@ -1,6 +1,7 @@
 package com.yqmonline.artifacts.sdk.models.character
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import kotlinx.serialization.Serializable
 
 /**
  * @param position Position in the leaderboard.
@@ -28,6 +29,7 @@ import com.fasterxml.jackson.annotation.JsonProperty
  * @param gold The numbers of gold on this character.
  */
 
+@Serializable
 data class CharacterLeaderboardSchema(
     // Position in the leaderboard.
     @JsonProperty("position")

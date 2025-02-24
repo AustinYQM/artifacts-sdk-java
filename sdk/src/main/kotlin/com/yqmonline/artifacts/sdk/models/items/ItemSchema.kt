@@ -4,6 +4,7 @@ package com.yqmonline.artifacts.sdk.models.items
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.yqmonline.artifacts.sdk.models.SimpleEffectSchema
 import com.yqmonline.artifacts.sdk.models.skill.crafting.CraftSchema
+import kotlinx.serialization.Serializable
 
 /**
  * @param name Item name.
@@ -17,6 +18,7 @@ import com.yqmonline.artifacts.sdk.models.skill.crafting.CraftSchema
  * @param craft
  */
 
+@Serializable
 data class ItemSchema(
     // Item name.
     @JsonProperty("name")

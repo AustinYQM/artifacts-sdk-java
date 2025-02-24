@@ -3,7 +3,8 @@
 package com.yqmonline.artifacts.sdk.models.items.ge
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import java.time.OffsetDateTime
+import kotlinx.datetime.Instant
+import kotlinx.serialization.Serializable
 
 /**
  * @param id Order id.
@@ -15,13 +16,14 @@ import java.time.OffsetDateTime
  * @param tax Order creation tax (3%, minimum 1)
  */
 
+@Serializable
 data class GEOrderCreatedSchema(
     // Order id.
     @JsonProperty("id")
     val id: String,
     // Order created at.
     @JsonProperty("created_at")
-    val createdAt: OffsetDateTime,
+    val createdAt: Instant,
     // Item code.
     @JsonProperty("code")
     val code: String,

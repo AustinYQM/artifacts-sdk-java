@@ -2,6 +2,7 @@
 package com.yqmonline.artifacts.sdk.models.map
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import kotlinx.serialization.Serializable
 
 /**
  * @param name Name of the map.
@@ -11,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty
  * @param content
  */
 
+@Serializable
 data class MapSchema(
     // Name of the map.
     @JsonProperty("name")

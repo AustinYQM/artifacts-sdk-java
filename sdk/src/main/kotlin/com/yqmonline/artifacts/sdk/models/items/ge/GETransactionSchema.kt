@@ -3,6 +3,7 @@
 package com.yqmonline.artifacts.sdk.models.items.ge
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import kotlinx.serialization.Serializable
 
 /**
  * @param id Order id.
@@ -12,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty
  * @param totalPrice Total price of the transaction.
  */
 
+@Serializable
 data class GETransactionSchema(
     // Order id.
     @JsonProperty("id")
