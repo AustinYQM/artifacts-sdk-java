@@ -1,24 +1,24 @@
-package com.yqmonline.artifacts.sdk.models.bank
+
+package com.yqmonline.artifacts.sdk.models.items.ge
 
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.yqmonline.artifacts.sdk.models.CooldownSchema
 import com.yqmonline.artifacts.sdk.models.character.CharacterSchema
-import com.yqmonline.artifacts.sdk.models.items.GoldSchema
 
 /**
  * @param cooldown Cooldown details.
- * @param bank Bank details.
- * @param character Player details.
+ * @param order Order details.
+ * @param character Character details.
  */
 
-data class BankGoldTransactionSchema(
+data class GEOrderTransactionSchema(
     // Cooldown details.
     @JsonProperty("cooldown")
     val cooldown: CooldownSchema,
-    // Bank details.
-    @JsonProperty("bank")
-    val bank: GoldSchema,
-    // Player details.
+    // Order details.
+    @JsonProperty("order")
+    val order: GEOrderCreatedSchema,
+    // Character details.
     @JsonProperty("character")
     val character: CharacterSchema,
 )

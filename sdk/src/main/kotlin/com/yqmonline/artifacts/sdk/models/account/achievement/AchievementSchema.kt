@@ -1,9 +1,7 @@
-package com.yqmonline.artifacts.sdk.models.account
+package com.yqmonline.artifacts.sdk.models.account.achievement
 
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.yqmonline.artifacts.sdk.enums.types.AchievementType
-import com.yqmonline.artifacts.sdk.models.account.achievement.AchievementRewards
-import java.time.OffsetDateTime
 
 /**
  * @param name Name of the achievement.
@@ -14,11 +12,9 @@ import java.time.OffsetDateTime
  * @param target
  * @param total Total to do.
  * @param rewards Rewards.
- * @param current Current progress.
- * @param completedAt
  */
 
-data class AccountAchievement(
+data class AchievementSchema(
     // Name of the achievement.
     @JsonProperty("name")
     val name: String,
@@ -42,9 +38,4 @@ data class AccountAchievement(
     // Rewards.
     @JsonProperty("rewards")
     val rewards: AchievementRewards,
-    // Current progress.
-    @JsonProperty("current")
-    val current: Int,
-    @JsonProperty("completed_at")
-    val completedAt: OffsetDateTime?,
 )

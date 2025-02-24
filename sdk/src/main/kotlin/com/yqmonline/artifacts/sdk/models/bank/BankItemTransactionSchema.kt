@@ -1,10 +1,10 @@
 package com.yqmonline.artifacts.sdk.models.bank
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.yqmonline.artifacts.sdk.models.CharacterSchema
 import com.yqmonline.artifacts.sdk.models.CooldownSchema
-import com.yqmonline.artifacts.sdk.models.ItemSchema
-import com.yqmonline.artifacts.sdk.models.SimpleItemSchema
+import com.yqmonline.artifacts.sdk.models.character.CharacterSchema
+import com.yqmonline.artifacts.sdk.models.items.ItemSchema
+import com.yqmonline.artifacts.sdk.models.items.SimpleItemSchema
 
 /**
  * @param cooldown Cooldown details.

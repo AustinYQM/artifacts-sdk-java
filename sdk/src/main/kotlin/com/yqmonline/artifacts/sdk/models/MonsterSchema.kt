@@ -2,6 +2,7 @@
 package com.yqmonline.artifacts.sdk.models
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import com.yqmonline.artifacts.sdk.models.items.DropRateSchema
 
 /**
  * @param name Name of the monster.
